@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Image from "next/image";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,6 +29,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header className="bg-white/80 dark:bg-neutral-950/70 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800">
+          <div className="mx-auto max-w-6xl px-6 py-3 flex items-center gap-3">
+            <Image src="/logo.svg" alt="Mulher em Movimento" width={28} height={28} priority />
+            <span className="text-sm font-semibold text-brand">Mulher em Movimento</span>
+          </div>
+        </header>
         {children}
       </body>
     </html>
